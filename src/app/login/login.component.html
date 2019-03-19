@@ -1,0 +1,26 @@
+<div *ngIf="disp">
+<h1>Login</h1>
+<fieldset>
+  <legend>Enter your Details</legend>
+  Username(id) : <input type="number" #id/>
+  <br><br>
+  Password : <input type="password" #pwd> <br>
+  <br>
+  Role : <select #role>
+    <option> Manager </option>
+    <option>Employee </option>
+    <option> Admin  </option>
+  </select> <br><br>
+
+<button type="submit"(click)="check(id.value,pwd.value,role.value)"> Login </button>
+<button type="reset"> Reset </button>
+</fieldset> 
+</div>
+<div *ngIf="disp1">
+  <div *ngIf="(role=='Manager'); then ManagerBlock"></div>
+  <ng-template #ManagerBlock ><app-manager></app-manager></ng-template>
+    <div *ngIf="(role=='Employee'); then EmployeeBlock "></div>
+    <ng-template #EmployeeBlock ><app-employee></app-employee></ng-template>
+     <div *ngIf="(role=='Admin'); then AdminBlock "></div>
+      <ng-template #AdminBlock><app-admin></app-admin></ng-template>
+</div>

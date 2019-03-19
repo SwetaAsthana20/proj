@@ -1,0 +1,30 @@
+<h1>Welcome Manager</h1>
+
+<fieldset>
+  <legend>Choose the action you want to perform</legend>
+  <br>
+  <button (click)="getUdata()">Employee Data</button>
+  <br>
+  <br>
+  <button (click)="getid()">Increment salary</button>
+  <br><br>
+</fieldset>
+<div *ngIf="disp">
+<fieldset>
+  <ul>
+    <li>ID , Name , Salary , Role , Contact </li>
+    <li *ngFor="let user of users">{{user.id}} , {{user.name}} , {{user.salary}} , {{user.role}} , {{user.contact}}</li>
+</ul>
+</fieldset> 
+</div>
+
+<div *ngIf="disp1">
+    <fieldset>
+  ID of Employee you want to Increment salary <input type="number" #id>
+  <br><br>
+  Amount to Increment in salary <input type="number" #amount>
+<br><br>
+  <button (click)="getInfo(id.value,amount.value)">Increment</button>
+  <button (click)="getUdata()">Get Updated Data</button>
+</fieldset>
+</div>

@@ -1,0 +1,31 @@
+<h1>Welcome Employee</h1>
+<fieldset>
+  <legend>You can update your data if you want</legend>
+  <br>
+  <button (click)="getdata()">Get Your Data</button>
+  <br><br>
+  <button (click)="update()">Update your Data</button>
+</fieldset>
+
+<div *ngIf="disp">
+<fieldset>
+  <ul>
+    <li>ID , Name , Salary , Role , Contact </li>
+    <li>{{udata.id}} , {{udata.name}} , {{udata.salary}} , {{udata.role}} , {{udata.contact}}</li>
+</ul>
+</fieldset> 
+</div>
+
+<div *ngIf="disp1">
+    <fieldset>
+      <legend>Enter datails to be updated</legend>
+      <br>
+      
+      Name <input type="text" #name><br>
+      password <input type="text" #pwd><br>
+      contact no. <input type="number" #contact><br>
+      <br><br>
+      <button (click)="updateData(contact.value,name.value,pwd.value)">Change Data</button>
+      <button (click)="getdata()">Get Updated Data</button>
+    </fieldset> 
+</div>

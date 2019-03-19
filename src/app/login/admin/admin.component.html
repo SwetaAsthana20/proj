@@ -1,0 +1,83 @@
+<h1>Welcome Admin</h1>
+<fieldset>
+  <legend>Choose the actoion you wanna perform</legend>
+  <br>
+
+  <button (click)="getdata()">Get All Data</button>
+  <br><br>
+  <button (click)="update()">Update Data Of Other Employee and Manager</button>
+  <br><br>
+  <button (click)="updateMy()">Update my profile</button>
+  <br><br>
+  <button (click)="insert()">Insert new data</button>
+  <br><br>
+  <button (click)="delete()">Delete data</button>
+  <br><br>
+
+</fieldset>
+
+<div *ngIf="disp">
+    <fieldset>
+      <ul>
+        <li>ID , Name , Salary , Role , Contact </li>
+        <li *ngFor="let user of users">{{user.id}} , {{user.name}} , {{user.salary}} , {{user.role}} , {{user.contact}}</li>
+      </ul>
+    </fieldset> 
+</div>
+
+<div *ngIf="disp1">
+  <fieldset>
+      <legend>Enter datails to be updated</legend>
+      <br>
+      Id Of Employee You want to update<input type="number" #id><br>
+      Name <input type="text" #name><br>
+      Role <input type="text" #role><br>
+      Contact no. <input type="number" #contact><br>
+      Salary <input type="number" #salary><br>
+      <br><br>
+      <button (click)="updateData(id.value,name.value,role.value,contact.value,salary.value)">Change Data</button>
+     
+  </fieldset>
+</div>
+
+<div *ngIf="disp2">
+    <fieldset>
+      <legend>Enter datails to be updated</legend>
+      <br>
+      
+      Name <input type="text" #name><br>
+      password <input type="text" #pwd><br>
+      contact no. <input type="number" #contact><br>
+      Salary <input type="number" #salary><br>
+      <br><br>
+      <button (click)="updateUData(contact.value,name.value,pwd.value,salary.value)">Change Data</button>
+  
+    </fieldset> 
+</div>
+
+<div *ngIf="disp3">
+    <fieldset>
+      <legend>Enter datails</legend>
+      <br>
+      Id <input type="number" #id><br>
+      Name <input type="text" #name><br>
+      password <input type="text" #pwd><br>
+      Role <input type="text" #role><br>
+      contact no. <input type="number" #contact><br>
+      Salary <input type="number" #salary><br>
+      <br><br>
+      <button (click)="insertData(id.value,name.value,pwd.value,role.value,contact.value,salary.value)">Change Data</button>
+  
+    </fieldset> 
+</div>
+
+<div *ngIf="disp4">
+  <fieldset>
+    <legend>Are You Sure , You want to delete?</legend>
+    <br>
+    Enter Id whose data you want to delete <input type="number" #id>
+    <br><br>
+    <button (click)="deleteItem(id.value)">Yes</button>
+    <button>No</button>
+  </fieldset>
+</div>

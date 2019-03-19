@@ -1,0 +1,36 @@
+{
+  "Udata": [
+    {
+      "id": 1,
+      "password": "rahul",
+      "role": "Manager",
+      "salary": 50000,
+      "contact": 7686786868,
+      "name": "rahul"
+    },
+    {
+      "id": 2,
+      "password": "rahul",
+      "role": "Admin",
+      "contact": "78549646448",
+      "name": "Rahul Rana",
+      "salary": "75000"
+    },
+    {
+      "id": 3,
+      "password": "rohit",
+      "role": "Employee",
+      "contact": "1573521324",
+      "name": "Rohit",
+      "salary": "5"
+    },
+    {
+      "id": 4,
+      "password": "",
+      "role": "Employee",
+      "contact": "54132194613",
+      "name": "Vishal",
+      "salary": "52000"
+    }
+  ]
+}
